@@ -13,7 +13,7 @@ const App = () => {
   return (
     <div className="bg-gray-50 min-h-screen flex items-center justify-center">
       <div className="bg-white p-6 rounded-lg shadow-lg max-w-4xl w-full">
-        <h1 className="text-4xl font-bold text-center text-blue-700 mb-6">Apple Financial Data Filtering</h1>
+        <h1 className="text-4xl font-bold text-center text-blue-700 mb-6"> Financial Data Filtering</h1>
         
         {/* Filters Section */}
         <div className="mb-8">
