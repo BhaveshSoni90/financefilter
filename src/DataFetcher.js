@@ -66,34 +66,36 @@ const DataFetcher = ({ filters, sorting }) => {
   }, [filters, sorting]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="text-center text-gray-700">Loading...</div>;
   }
 
   return (
-    <table className="table-auto w-full border-collapse border border-gray-200">
-      <thead>
-        <tr>
-          <th className="border border-gray-300 p-2">Date</th>
-          <th className="border border-gray-300 p-2">Revenue</th>
-          <th className="border border-gray-300 p-2">Net Income</th>
-          <th className="border border-gray-300 p-2">Gross Profit</th>
-          <th className="border border-gray-300 p-2">EPS</th>
-          <th className="border border-gray-300 p-2">Operating Income</th>
-        </tr>
-      </thead>
-      <tbody>
-        {data.map((item) => (
-          <tr key={item.date}>
-            <td className="border border-gray-300 p-2">{item.date}</td>
-            <td className="border border-gray-300 p-2">${item.revenue.toLocaleString()}</td>
-            <td className="border border-gray-300 p-2">${item.netIncome.toLocaleString()}</td>
-            <td className="border border-gray-300 p-2">${item.grossProfit.toLocaleString()}</td>
-            <td className="border border-gray-300 p-2">{item.eps}</td>
-            <td className="border border-gray-300 p-2">${item.operatingIncome.toLocaleString()}</td>
+    <div className="overflow-x-auto">
+      <table className="table-auto w-full border-collapse border border-gray-200">
+        <thead>
+          <tr>
+            <th className="border border-gray-300 p-2">Date</th>
+            <th className="border border-gray-300 p-2">Revenue</th>
+            <th className="border border-gray-300 p-2">Net Income</th>
+            <th className="border border-gray-300 p-2">Gross Profit</th>
+            <th className="border border-gray-300 p-2">EPS</th>
+            <th className="border border-gray-300 p-2">Operating Income</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {data.map((item) => (
+            <tr key={item.date}>
+              <td className="border border-gray-300 p-2">{item.date}</td>
+              <td className="border border-gray-300 p-2">${item.revenue.toLocaleString()}</td>
+              <td className="border border-gray-300 p-2">${item.netIncome.toLocaleString()}</td>
+              <td className="border border-gray-300 p-2">${item.grossProfit.toLocaleString()}</td>
+              <td className="border border-gray-300 p-2">{item.eps}</td>
+              <td className="border border-gray-300 p-2">${item.operatingIncome.toLocaleString()}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 
